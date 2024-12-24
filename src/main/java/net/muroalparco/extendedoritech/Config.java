@@ -1,4 +1,4 @@
-package net.muroalparco.extended_oritech;
+package net.muroalparco.extendedoritech;
 
 import java.util.List;
 import java.util.Set;

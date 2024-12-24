@@ -18,8 +18,18 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    mavenLocal()
+    mavenCentral() // Per dipendenze generali
+    maven {
+        name = "NeoForge Maven"
+        url = "https://maven.neoforged.net/releases"
+    }
+    maven {
+        name = "Forge Maven"
+        url = "https://maven.minecraftforge.net"
+    }
 }
+
+
 
 base {
     archivesName = mod_id
@@ -176,6 +186,12 @@ publishing {
         }
     }
 }
+
+dependencies {
+    //implementation 'gg.essential:neo-forge:1.21.1-21.1.90'
+    implementation files('libs/oritech-neoforge-0.12.3.jar')
+}
+
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
